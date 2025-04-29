@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DishDelight - Food Delivery in Bailhongal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><h1>Dish<span>Delight</span></h1></a>
+        </div>
+        <div class="nav-items">
+            <a href="index.html" class="active">Home</a>
+            <a href="restaurants.html">Restaurants</a>
+            <a href="offers.html">Offers</a>
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Delicious Food Delivered to Your Doorstep</h1>
+            <p>Order from the best restaurants in Bailhongal</p>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for dishes or restaurants">
+                <button>Search</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="quick-filters">
+        <div class="filter-container">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Pure Veg</button>
+            <button class="filter-btn">Non Veg</button>
+            <button class="filter-btn">Fast Food</button>
+            <button class="filter-btn">South Indian</button>
+            <button class="filter-btn">North Indian</button>
+            <button class="filter-btn">Chinese</button>
+        </div>
+    </section>
+
+    <section class="featured-dishes">
+        <div class="section-header">
+            <h2>Popular Dishes</h2>
+            <p>Most ordered dishes in Bailhongal</p>
+        </div>
+        <div class="dishes-grid">
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="https://source.unsplash.com/800x600/?biryani" alt="Chicken Biryani">
+                    <span class="dish-tag">Bestseller</span>
+                </div>
+                <div class="dish-info">
+                    <div class="dish-header">
+                        <h3>Special Chicken Biryani</h3>
+                        <span class="non-veg-icon"><i class="fas fa-circle"></i></span>
+                    </div>
+                    <div class="restaurant-name">
+                        <a href="restaurants/mayur.html">Mayur Hotel</a>
+                    </div>
+                    <div class="dish-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.5</span>
+                        </div>
+                        <div class="time">
+                            <i class="fas fa-clock"></i>
+                            <span>30 min</span>
+                        </div>
+                        <div class="price">₹180</div>
+                    </div>
+                    <button class="order-btn">Order Now</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="https://source.unsplash.com/800x600/?masala-dosa" alt="Masala Dosa">
+                    <span class="dish-tag">Must Try</span>
+                </div>
+                <div class="dish-info">
+                    <div class="dish-header">
+                        <h3>Special Masala Dosa</h3>
+                        <span class="veg-icon"><i class="fas fa-circle"></i></span>
+                    </div>
+                    <div class="restaurant-name">
+                        <a href="restaurants/village.html">Village Restaurant</a>
+                    </div>
+                    <div class="dish-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.3</span>
+                        </div>
+                        <div class="time">
+                            <i class="fas fa-clock"></i>
+                            <span>20 min</span>
+                        </div>
+                        <div class="price">₹80</div>
+                    </div>
+                    <button class="order-btn">Order Now</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="https://source.unsplash.com/800x600/?butter-chicken" alt="Butter Chicken">
+                    <span class="dish-tag">Popular</span>
+                </div>
+                <div class="dish-info">
+                    <div class="dish-header">
+                        <h3>Butter Chicken</h3>
+                        <span class="non-veg-icon"><i class="fas fa-circle"></i></span>
+                    </div>
+                    <div class="restaurant-name">
+                        <a href="restaurants/priya.html">New Priya</a>
+                    </div>
+                    <div class="dish-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6</span>
+                        </div>
+                        <div class="time">
+                            <i class="fas fa-clock"></i>
+                            <span>35 min</span>
+                        </div>
+                        <div class="price">₹220</div>
+                    </div>
+                    <button class="order-btn">Order Now</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-image">
+                    <img src="https://source.unsplash.com/800x600/?paneer-butter-masala" alt="Paneer Butter Masala">
+                    <span class="dish-tag">Chef's Special</span>
+                </div>
+                <div class="dish-info">
+                    <div class="dish-header">
+                        <h3>Paneer Butter Masala</h3>
+                        <span class="veg-icon"><i class="fas fa-circle"></i></span>
+                    </div>
+                    <div class="restaurant-name">
+                        <a href="restaurants/haripriya.html">Haripriya</a>
+                    </div>
+                    <div class="dish-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.4</span>
+                        </div>
+                        <div class="time">
+                            <i class="fas fa-clock"></i>
+                            <span>25 min</span>
+                        </div>
+                        <div class="price">₹180</div>
+                    </div>
+                    <button class="order-btn">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="top-restaurants">
+        <div class="section-header">
+            <h2>Popular Restaurants</h2>
+            <p>Best rated restaurants in Bailhongal</p>
+        </div>
+        <div class="restaurants-grid">
+            <a href="restaurants/mayur.html" class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://source.unsplash.com/800x600/?restaurant,indian" alt="Mayur Hotel">
+                    <div class="restaurant-overlay">
+                        <span class="time">20-30 min</span>
+                    </div>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Mayur Hotel</h3>
+                    <div class="cuisine">North Indian • Chinese</div>
+                    <div class="restaurant-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 4.5</span>
+                        <span class="price">₹200 for two</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="restaurants/village.html" class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://source.unsplash.com/800x600/?south-indian-restaurant" alt="Village Restaurant">
+                    <div class="restaurant-overlay">
+                        <span class="time">15-25 min</span>
+                    </div>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Village Restaurant</h3>
+                    <div class="cuisine">South Indian • Pure Veg</div>
+                    <div class="restaurant-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 4.3</span>
+                        <span class="price">₹150 for two</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="restaurants/priya.html" class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://source.unsplash.com/800x600/?modern-restaurant" alt="New Priya">
+                    <div class="restaurant-overlay">
+                        <span class="time">25-35 min</span>
+                    </div>
+                </div>
+                <div class="restaurant-info">
+                    <h3>New Priya</h3>
+                    <div class="cuisine">North Indian • Chinese • Biryani</div>
+                    <div class="restaurant-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+                        <span class="price">₹250 for two</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="restaurants/haripriya.html" class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://source.unsplash.com/800x600/?vegetarian-restaurant" alt="Haripriya">
+                    <div class="restaurant-overlay">
+                        <span class="time">20-30 min</span>
+                    </div>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Haripriya</h3>
+                    <div class="cuisine">Pure Veg • South Indian • North Indian</div>
+                    <div class="restaurant-meta">
+                        <span class="rating"><i class="fas fa-star"></i> 4.4</span>
+                        <span class="price">₹180 for two</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="app-promo">
+        <div class="app-content">
+            <div class="app-text">
+                <h2>Download Our Mobile App</h2>
+                <p>Get exclusive offers and track your orders in real-time</p>
+                <div class="app-buttons">
+                    <a href="#" class="app-btn">
+                        <i class="fab fa-google-play"></i>
+                        <div class="btn-text">
+                            <span>GET IT ON</span>
+                            <strong>Google Play</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="app-btn">
+                        <i class="fab fa-apple"></i>
+                        <div class="btn-text">
+                            <span>Download on the</span>
+                            <strong>App Store</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="app-image">
+                <img src="https://source.unsplash.com/400x800/?mobile-app" alt="Mobile App">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dish<span>Delight</span></h3>
+                <p>Your favorite food delivery partner in Bailhongal</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Partner with us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DishDelight Bailhongal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

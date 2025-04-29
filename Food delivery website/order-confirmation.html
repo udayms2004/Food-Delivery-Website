@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - DishDelight</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><h1>Dish<span>Delight</span></h1></a>
+        </div>
+        <div class="nav-items">
+            <a href="index.html">Home</a>
+            <a href="restaurants.html">Restaurants</a>
+            <a href="offers.html">Offers</a>
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <div class="confirmation-container">
+        <div class="confirmation-content">
+            <div class="confirmation-header">
+                <i class="fas fa-check-circle"></i>
+                <h2>Order Confirmed!</h2>
+                <p>Thank you for your order</p>
+            </div>
+
+            <div class="order-details">
+                <div class="order-id">
+                    <span>Order ID:</span>
+                    <span id="orderId"></span>
+                </div>
+
+                <div class="order-items">
+                    <h3>Order Summary</h3>
+                    <div id="orderItemsList"></div>
+                </div>
+
+                <div class="delivery-info">
+                    <h3>Delivery Information</h3>
+                    <p id="deliveryAddress"></p>
+                    <div class="estimated-time">
+                        <i class="fas fa-clock"></i>
+                        <span>Estimated delivery time: 30-45 minutes</span>
+                    </div>
+                </div>
+
+                <div class="order-total">
+                    <div class="total-line">
+                        <span>Items Total</span>
+                        <span id="itemsTotal"></span>
+                    </div>
+                    <div class="total-line">
+                        <span>Delivery Fee</span>
+                        <span>₹40</span>
+                    </div>
+                    <div class="total-line">
+                        <span>Platform Fee</span>
+                        <span>₹10</span>
+                    </div>
+                    <div class="total-line">
+                        <span>GST and Restaurant Charges</span>
+                        <span id="taxesAmount"></span>
+                    </div>
+                    <div class="total-line grand-total">
+                        <span>Total Amount</span>
+                        <span id="totalAmount"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="confirmation-footer">
+                <a href="restaurants.html" class="browse-more">Browse More Restaurants</a>
+                <p class="support-text">
+                    Need help? Contact our support at <a href="tel:+919876543210">+91 98765 43210</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('orderId');
+
+            if (!orderId) {
+                window.location.href = 'restaurants.html';
+                return;
+            }
+
+            const orders = JSON.parse(localStorage.getItem('orders')) || [];
+            const order = orders.find(o => o.id === orderId);
+
+            if (!order) {
+                window.location.href = 'restaurants.html';
+                return;
+            }
+
+            // Display order details
+            document.getElementById('orderId').textContent = order.id;
+            document.getElementById('deliveryAddress').textContent = order.deliveryAddress;
+
+            // Calculate and display totals
+            const itemsTotal = order.items.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const taxes = Math.round(itemsTotal * 0.05);
+            
+            document.getElementById('itemsTotal').textContent = `₹${itemsTotal}`;
+            document.getElementById('taxesAmount').textContent = `₹${taxes}`;
+            document.getElementById('totalAmount').textContent = `₹${order.totalAmount}`;
+
+            // Display order items
+            const orderItemsList = document.getElementById('orderItemsList');
+            order.items.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'order-item';
+                itemDiv.innerHTML = `
+                    <div class="item-info">
+                        <span class="item-name">${item.name}</span>
+                        <span class="item-quantity">×${item.quantity}</span>
+                    </div>
+                    <span class="item-price">₹${item.price * item.quantity}</span>
+                `;
+                orderItemsList.appendChild(itemDiv);
+            });
+        });
+    </script>
+</body>
+</html>

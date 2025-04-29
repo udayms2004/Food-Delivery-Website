@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - DishDelight</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><h1>Dish<span>Delight</span></h1></a>
+        </div>
+        <div class="nav-items">
+            <a href="index.html">Home</a>
+            <a href="restaurants.html">Restaurants</a>
+            <a href="offers.html">Offers</a>
+            <a href="cart.html" class="active"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <div class="cart-container">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <span class="cart-count">0</span>
+            </div>
+
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+
+            <div class="cart-empty">
+                <i class="fas fa-shopping-basket"></i>
+                <h3>Your cart is empty</h3>
+                <p>Add items from restaurants to start your order</p>
+                <a href="restaurants.html" class="browse-btn">Browse Restaurants</a>
+            </div>
+        </div>
+
+        <div class="cart-summary">
+            <h3>Order Summary</h3>
+            <div class="summary-items">
+                <div class="summary-line">
+                    <span>Items Total</span>
+                    <span class="items-total">₹0</span>
+                </div>
+                <div class="summary-line">
+                    <span>Delivery Fee</span>
+                    <span>₹40</span>
+                </div>
+                <div class="summary-line">
+                    <span>Platform Fee</span>
+                    <span>₹10</span>
+                </div>
+                <div class="summary-line">
+                    <span>GST and Restaurant Charges</span>
+                    <span class="taxes-amount">₹0</span>
+                </div>
+                <div class="summary-line total">
+                    <span>Total Amount</span>
+                    <span class="total-amount">₹0</span>
+                </div>
+            </div>
+
+            <form id="checkout-form" class="checkout-form">
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <textarea id="address" required placeholder="Enter your complete delivery address"></textarea>
+                </div>
+                <button type="submit" class="checkout-btn" disabled>Proceed to Checkout</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Priya - DishDelight</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><h1>Dish<span>Delight</span></h1></a>
+        </div>
+        <div class="nav-items">
+            <a href="../index.html">Home</a>
+            <a href="../restaurants.html" class="active">Restaurants</a>
+            <a href="../offers.html">Offers</a>
+            <a href="../cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a href="../login.html" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <div class="restaurant-header">
+        <div class="restaurant-banner">
+            <img src="https://source.unsplash.com/1600x400/?modern-restaurant" alt="New Priya">
+            <div class="restaurant-info-overlay">
+                <div class="restaurant-details">
+                    <h1>New Priya</h1>
+                    <p class="cuisine">North Indian • Chinese • Biryani</p>
+                    <div class="restaurant-stats">
+                        <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+                        <span class="time"><i class="fas fa-clock"></i> 25-35 min</span>
+                        <span class="price"><i class="fas fa-rupee-sign"></i> 250 for two</span>
+                        <span class="type veg-nonveg"><i class="fas fa-utensils"></i> Veg & Non-veg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-sidebar">
+            <div class="menu-categories">
+                <h3>Menu</h3>
+                <ul>
+                    <li class="active"><a href="#recommended">Recommended</a></li>
+                    <li><a href="#biryani">Biryani</a></li>
+                    <li><a href="#chinese">Chinese</a></li>
+                    <li><a href="#tandoor">Tandoor</a></li>
+                    <li><a href="#curries">Curries</a></li>
+                    <li><a href="#breads">Breads</a></li>
+                    <li><a href="#desserts">Desserts</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-content">
+            <section id="recommended" class="menu-section">
+                <h2>Recommended</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <img src="https://source.unsplash.com/400x300/?butter-chicken" alt="Butter Chicken">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Butter Chicken</h3>
+                                <span class="non-veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Tender chicken pieces in rich, creamy tomato gravy</p>
+                            <div class="item-footer">
+                                <span class="price">₹220</span>
+                                <button class="add-to-cart">Add <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="https://source.unsplash.com/400x300/?chicken-biryani" alt="Special Chicken Biryani">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Special Chicken Biryani</h3>
+                                <span class="non-veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Long-grain basmati rice cooked with tender chicken and aromatic spices</p>
+                            <div class="item-footer">
+                                <span class="price">₹180</span>
+                                <button class="add-to-cart">Add <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="https://source.unsplash.com/400x300/?chilli-chicken" alt="Chilli Chicken">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Chilli Chicken</h3>
+                                <span class="non-veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Spicy Indo-Chinese style chicken with bell peppers and onions</p>
+                            <div class="item-footer">
+                                <span class="price">₹190</span>
+                                <button class="add-to-cart">Add <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="https://source.unsplash.com/400x300/?paneer-tikka" alt="Paneer Tikka">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Paneer Tikka</h3>
+                                <span class="veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Grilled cottage cheese marinated in spices and yogurt</p>
+                            <div class="item-footer">
+                                <span class="price">₹160</span>
+                                <button class="add-to-cart">Add <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="biryani" class="menu-section">
+                <h2>Biryani</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <img src="https://source.unsplash.com/400x300/?veg-biryani" alt="Veg Biryani">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Veg Biryani</h3>
+                                <span class="veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Fragrant rice cooked with mixed vegetables and biryani spices</p>
+                            <div class="item-footer">
+                                <span class="price">₹150</span>
+                                <button class="add-to-cart">Add <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="https://source.unsplash.com/400x300/?mutton-biryani" alt="Mutton Biryani">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Mutton Biryani</h3>
+                                <span class="non-veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Traditional biryani with tender mutton pieces and aromatic rice</p>
+                            <div class="item-footer">
+                                <span class="price">₹250</span>
+                                <button class="add-to-cart">Add <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dish<span>Delight</span></h3>
+                <p>Your favorite food delivery partner in Bailhongal</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Partner with us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DishDelight Bailhongal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../menu.js"></script>
+</body>
+</html>

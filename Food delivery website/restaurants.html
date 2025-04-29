@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants - Dish Delight</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><h1>Dish<span>Delight</span></h1></a>
+        </div>
+        <div class="nav-items">
+            <a href="index.html">Home</a>
+            <a href="restaurants.html" class="active">Restaurants</a>
+            <a href="offers.html">Offers</a>
+            <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Popular Restaurants in Bailhongal</h1>
+        <p>Discover the best food & drinks</p>
+    </header>
+
+    <section class="restaurants-list">
+        <div class="search-sort">
+            <div class="search-restaurants">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for restaurants or cuisines...">
+            </div>
+            <div class="sort-by">
+                <select>
+                    <option value="rating">Rating</option>
+                    <option value="delivery-time">Delivery Time</option>
+                    <option value="cost-low">Cost: Low to High</option>
+                    <option value="cost-high">Cost: High to Low</option>
+                </select>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Pure Veg</button>
+            <button class="filter-btn">Non-Veg</button>
+            <button class="filter-btn">Rating 4.0+</button>
+            <button class="filter-btn">Fast Delivery</button>
+            <button class="filter-btn">Offers</button>
+        </div>
+
+        <div class="restaurant-grid">
+            <div class="restaurant-card">
+                <a href="restaurants/mayur.html">
+                    <div class="restaurant-img">
+                        <div class="overlay"></div>
+                        <div class="restaurant-type veg-nonveg">
+                            <span class="badge">Veg & Non-veg</span>
+                        </div>
+                        <img src="https://source.unsplash.com/800x600/?restaurant,indian" alt="Mayur Hotel">
+                        <span class="rating"><i class="fas fa-star"></i> 4.5</span>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Mayur Hotel</h3>
+                        <p class="cuisine">North Indian • South Indian • Chinese</p>
+                        <div class="restaurant-meta">
+                            <span><i class="fas fa-clock"></i> 20-30 min</span>
+                            <span><i class="fas fa-rupee-sign"></i> 200 for two</span>
+                        </div>
+                        <button class="order-now">View Menu</button>
+                    </div>
+                </a>
+            </div>
+
+            <div class="restaurant-card">
+                <a href="restaurants/village.html">
+                    <div class="restaurant-img">
+                        <div class="overlay"></div>
+                        <div class="restaurant-type veg-only">
+                            <span class="badge">Pure Veg</span>
+                        </div>
+                        <img src="https://source.unsplash.com/800x600/?vegetarian,food" alt="The Village">
+                        <span class="rating"><i class="fas fa-star"></i> 4.3</span>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>The Village</h3>
+                        <p class="cuisine">South Indian • North Indian</p>
+                        <div class="restaurant-meta">
+                            <span><i class="fas fa-clock"></i> 25-35 min</span>
+                            <span><i class="fas fa-rupee-sign"></i> 150 for two</span>
+                        </div>
+                        <button class="order-now">View Menu</button>
+                    </div>
+                </a>
+            </div>
+
+            <div class="restaurant-card">
+                <a href="restaurants/newpriya.html">
+                    <div class="restaurant-img">
+                        <div class="overlay"></div>
+                        <div class="restaurant-type veg-nonveg">
+                            <span class="badge">Veg & Non-veg</span>
+                        </div>
+                        <img src="https://source.unsplash.com/800x600/?restaurant,meals" alt="NewPriya">
+                        <span class="rating"><i class="fas fa-star"></i> 4.3</span>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>NewPriya</h3>
+                        <p class="cuisine">South Indian • Chinese • North Indian</p>
+                        <div class="restaurant-meta">
+                            <span><i class="fas fa-clock"></i> 15-25 min</span>
+                            <span><i class="fas fa-rupee-sign"></i> 120 for two</span>
+                        </div>
+                        <button class="order-now">View Menu</button>
+                    </div>
+                </a>
+            </div>
+
+            <div class="restaurant-card">
+                <a href="restaurants/haripriya.html">
+                    <div class="restaurant-img">
+                        <div class="overlay"></div>
+                        <div class="restaurant-type veg-only">
+                            <span class="badge">Pure Veg</span>
+                        </div>
+                        <img src="https://source.unsplash.com/800x600/?indian-restaurant" alt="Haripriya">
+                        <span class="rating"><i class="fas fa-star"></i> 4.4</span>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Haripriya</h3>
+                        <p class="cuisine">South Indian • Pure Veg</p>
+                        <div class="restaurant-meta">
+                            <span><i class="fas fa-clock"></i> 20-30 min</span>
+                            <span><i class="fas fa-rupee-sign"></i> 180 for two</span>
+                        </div>
+                        <button class="order-now">View Menu</button>
+                    </div>
+                </a>
+            </div>
+
+            <div class="restaurant-card">
+                <a href="restaurants/priya.html">
+                    <div class="restaurant-img">
+                        <div class="overlay"></div>
+                        <div class="restaurant-type veg-nonveg">
+                            <span class="badge">Veg & Non-veg</span>
+                        </div>
+                        <img src="https://source.unsplash.com/800x600/?restaurant-food" alt="Priya">
+                        <span class="rating"><i class="fas fa-star"></i> 4.2</span>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Priya</h3>
+                        <p class="cuisine">Chinese • North Indian • Biryani</p>
+                        <div class="restaurant-meta">
+                            <span><i class="fas fa-clock"></i> 25-35 min</span>
+                            <span><i class="fas fa-rupee-sign"></i> 200 for two</span>
+                        </div>
+                        <button class="order-now">View Menu</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

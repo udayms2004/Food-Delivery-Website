@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Village Restaurant - DishDelight</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><h1>Dish<span>Delight</span></h1></a>
+        </div>
+        <div class="nav-items">
+            <a href="../index.html">Home</a>
+            <a href="../restaurants.html" class="active">Restaurants</a>
+            <a href="../offers.html">Offers</a>
+            <a href="../cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a href="../login.html" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <div class="restaurant-header">
+        <div class="restaurant-banner">
+            <img src="https://source.unsplash.com/1600x400/?south-indian-restaurant" alt="Village Restaurant">
+            <div class="restaurant-info-overlay">
+                <div class="restaurant-details">
+                    <h1>Village Restaurant</h1>
+                    <p class="cuisine">South Indian • Pure Veg</p>
+                    <div class="restaurant-stats">
+                        <span class="rating"><i class="fas fa-star"></i> 4.3</span>
+                        <span class="time"><i class="fas fa-clock"></i> 15-25 min</span>
+                        <span class="price"><i class="fas fa-rupee-sign"></i> 150 for two</span>
+                        <span class="type veg"><i class="fas fa-leaf"></i> Pure Veg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-sidebar">
+            <div class="menu-categories">
+                <h3>Menu</h3>
+                <ul>
+                    <li class="active"><a href="#recommended">Recommended</a></li>
+                    <li><a href="#dosa">Dosa Varieties</a></li>
+                    <li><a href="#idli">Idli & Vada</a></li>
+                    <li><a href="#rice">Rice Items</a></li>
+                    <li><a href="#thali">Special Thali</a></li>
+                    <li><a href="#beverages">Beverages</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-content">
+            <section id="recommended" class="menu-section">
+                <h2>Recommended</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <img src="https://source.unsplash.com/400x300/?masala-dosa" alt="Special Masala Dosa">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Special Masala Dosa</h3>
+                                <span class="veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Crispy dosa with spiced potato filling, served with sambar and chutneys</p>
+                            <div class="item-footer">
+                                <span class="price">₹80</span>
+                                <button class="add-to-cart">Add <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="https://source.unsplash.com/400x300/?idli-sambar" alt="Idli Sambar">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Idli Sambar (4 Pcs)</h3>
+                                <span class="veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Soft and fluffy idlis served with sambar and coconut chutney</p>
+                            <div class="item-footer">
+                                <span class="price">₹60</span>
+                                <button class="add-to-cart">Add <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="https://source.unsplash.com/400x300/?south-indian-thali" alt="Special South Indian Thali">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Special South Indian Thali</h3>
+                                <span class="veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Complete meal with rice, roti, curry, dal, sambar, rasam, and dessert</p>
+                            <div class="item-footer">
+                                <span class="price">₹180</span>
+                                <button class="add-to-cart">Add <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="dosa" class="menu-section">
+                <h2>Dosa Varieties</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <img src="https://source.unsplash.com/400x300/?plain-dosa" alt="Plain Dosa">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Plain Dosa</h3>
+                                <span class="veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Crispy rice and lentil crepe served with sambar and chutneys</p>
+                            <div class="item-footer">
+                                <span class="price">₹50</span>
+                                <button class="add-to-cart">Add <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="https://source.unsplash.com/400x300/?onion-dosa" alt="Onion Dosa">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Onion Dosa</h3>
+                                <span class="veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Dosa topped with spiced onions and served with sambar and chutneys</p>
+                            <div class="item-footer">
+                                <span class="price">₹70</span>
+                                <button class="add-to-cart">Add <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="https://source.unsplash.com/400x300/?mysore-masala-dosa" alt="Mysore Masala Dosa">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Mysore Masala Dosa</h3>
+                                <span class="veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Spicy red chutney spread dosa with potato filling</p>
+                            <div class="item-footer">
+                                <span class="price">₹90</span>
+                                <button class="add-to-cart">Add <i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dish<span>Delight</span></h3>
+                <p>Your favorite food delivery partner in Bailhongal</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Partner with us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DishDelight Bailhongal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
