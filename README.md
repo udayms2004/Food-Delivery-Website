@@ -150,11 +150,7 @@ To modify the website:
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## 👥 Contact
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
-
-Project Link: [https://github.com/yourusername/dishdelight](https://github.com/yourusername/dishdelight)
 
 ## 🙏 Acknowledgments
 
