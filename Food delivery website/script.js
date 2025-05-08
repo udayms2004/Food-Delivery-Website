@@ -198,6 +198,13 @@ function showNotification(message) {
     }, 3000);
 }
 
+// Save cart data to localStorage
+localStorage.setItem("cart", JSON.stringify(cart));
+
+// Retrieve cart data on the cart page
+const cartData = JSON.parse(localStorage.getItem("cart"));
+console.log(cartData); // Debugging: Check cart data
+
 // Initialize cart if on cart page
 if (window.location.pathname.includes('cart.html')) {
     renderCart();
@@ -458,4 +465,64 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname.includes('/restaurants/')) {
         updateCartButtons();
     }
+});
+
+// Add to Cart Functionality
+document.addEventListener("DOMContentLoaded", () => {
+    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+    const cart = [];
+
+    addToCartButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+            const menuItem = event.target.closest(".menu-item");
+            const itemName = menuItem.querySelector(".item-header h3").textContent;
+            const itemPrice = parseInt(menuItem.querySelector(".price").textContent.replace(/[^\d]/g, ""));
+            const itemImage = menuItem.querySelector("img").src;
+
+            const cartItem = {
+                name: itemName,
+                price: itemPrice,
+                image: itemImage,
+            };
+
+            cart.push(cartItem);
+            console.log(cart);
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const orderButtons = document.querySelectorAll(".order-btn");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Function to update cart count in the navbar
+    const updateCartCount = () => {
+        const cartCountElement = document.querySelector(".cart-count");
+        if (cartCountElement) {
+            cartCountElement.textContent = cart.length;
+        }
+    };
+
+    // Add event listeners to "Order Now" buttons
+    orderButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const dishName = button.getAttribute("data-name");
+            const dishPrice = parseFloat(button.getAttribute("data-price"));
+
+            // Add the dish to the cart
+            const cartItem = { name: dishName, price: dishPrice };
+            cart.push(cartItem);
+
+            // Save the updated cart to localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            // Update the cart count
+            updateCartCount();
+
+            // Notify the user
+            alert(`${dishName} has been added to your cart!`);
+        });
+    });
+
+    // Initialize the cart count on page load
+    updateCartCount();
 });

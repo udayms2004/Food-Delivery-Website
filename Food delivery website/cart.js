@@ -1,155 +1,106 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const cartItems = document.querySelector('.cart-items');
-    const cartEmpty = document.querySelector('.cart-empty');
-    const cartCount = document.querySelector('.cart-count');
-    const itemsTotal = document.querySelector('.items-total');
-    const taxesAmount = document.querySelector('.taxes-amount');
-    const totalAmount = document.querySelector('.total-amount');
-    const checkoutBtn = document.querySelector('.checkout-btn');
-    const checkoutForm = document.getElementById('checkout-form');
+// Order Now Functionality
+document.addEventListener("DOMContentLoaded", () => {
+    const orderButtons = document.querySelectorAll(".order-btn");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    function updateCart() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        
-        // Update cart count
-        cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
-
-        if (cart.length === 0) {
-            cartItems.style.display = 'none';
-            cartEmpty.style.display = 'flex';
-            checkoutBtn.disabled = true;
-            return;
-        }
-
-        cartItems.style.display = 'block';
-        cartEmpty.style.display = 'none';
-        checkoutBtn.disabled = false;
-
-        // Clear existing items
-        cartItems.innerHTML = '';
-
-        // Group items by restaurant
-        const itemsByRestaurant = {};
-        cart.forEach(item => {
-            if (!itemsByRestaurant[item.restaurant]) {
-                itemsByRestaurant[item.restaurant] = [];
-            }
-            itemsByRestaurant[item.restaurant].push(item);
-        });
-
-        // Calculate totals
-        let subtotal = 0;
-        Object.entries(itemsByRestaurant).forEach(([restaurant, items]) => {
-            const restaurantDiv = document.createElement('div');
-            restaurantDiv.className = 'restaurant-group';
-            restaurantDiv.innerHTML = `
-                <h3 class="restaurant-name">${restaurant}</h3>
-                <div class="restaurant-items"></div>
-            `;
-
-            const restaurantItems = restaurantDiv.querySelector('.restaurant-items');
-            items.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                subtotal += itemTotal;
-
-                const itemDiv = document.createElement('div');
-                itemDiv.className = 'cart-item';
-                itemDiv.innerHTML = `
-                    <div class="item-image">
-                        <img src="${item.image}" alt="${item.name}">
-                    </div>
-                    <div class="item-details">
-                        <h4>${item.name}</h4>
-                        <div class="item-price">₹${item.price}</div>
-                        <div class="item-controls">
-                            <button onclick="updateQuantity('${item.id}', -1)" class="quantity-btn">-</button>
-                            <span class="quantity">${item.quantity}</span>
-                            <button onclick="updateQuantity('${item.id}', 1)" class="quantity-btn">+</button>
-                        </div>
-                    </div>
-                    <div class="item-total">
-                        ₹${itemTotal}
-                    </div>
-                    <button onclick="removeFromCart('${item.id}')" class="remove-item">
-                        <i class="fas fa-times"></i>
-                    </button>
-                `;
-                restaurantItems.appendChild(itemDiv);
-            });
-
-            cartItems.appendChild(restaurantDiv);
-        });
-
-        // Update summary
-        const taxes = Math.round(subtotal * 0.05); // 5% GST
-        const total = subtotal + 40 + 10 + taxes; // Add delivery and platform fee
-
-        itemsTotal.textContent = `₹${subtotal}`;
-        taxesAmount.textContent = `₹${taxes}`;
-        totalAmount.textContent = `₹${total}`;
-    }
-
-    // Handle quantity updates
-    window.updateQuantity = function(itemId, change) {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const itemIndex = cart.findIndex(item => item.id === itemId);
-        
-        if (itemIndex > -1) {
-            cart[itemIndex].quantity += change;
-            if (cart[itemIndex].quantity <= 0) {
-                cart.splice(itemIndex, 1);
-            }
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCart();
+    // Function to update cart count in the navbar
+    const updateCartCount = () => {
+        const cartCountElement = document.querySelector(".cart-count");
+        if (cartCountElement) {
+            cartCountElement.textContent = cart.length;
         }
     };
 
-    // Handle item removal
-    window.removeFromCart = function(itemId) {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const updatedCart = cart.filter(item => item.id !== itemId);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
-        updateCart();
-    };
+    // Add event listeners to "Order Now" buttons
+    orderButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const dishName = button.getAttribute("data-name");
+            const dishPrice = parseFloat(button.getAttribute("data-price"));
 
-    // Handle checkout
-    checkoutForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        
-        if (cart.length === 0) {
-            alert('Your cart is empty!');
-            return;
-        }
+            // Add the dish to the cart
+            const cartItem = { name: dishName, price: dishPrice };
+            cart.push(cartItem);
 
-        const address = document.getElementById('address').value;
-        const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-        const taxes = Math.round(subtotal * 0.05);
-        const total = subtotal + 40 + 10 + taxes;
+            // Save the updated cart to localStorage
+            localStorage.setItem("cart", JSON.stringify(cart));
 
-        // Create order
-        const order = {
-            id: 'ORD' + Date.now(),
-            items: cart,
-            totalAmount: total,
-            deliveryAddress: address,
-            status: 'confirmed',
-            createdAt: new Date().toISOString()
-        };
+            // Update the cart count
+            updateCartCount();
 
-        // Save order
-        const orders = JSON.parse(localStorage.getItem('orders')) || [];
-        orders.push(order);
-        localStorage.setItem('orders', JSON.stringify(orders));
-
-        // Clear cart
-        localStorage.removeItem('cart');
-
-        // Show success message and redirect
-        alert('Order placed successfully! Order ID: ' + order.id);
-        window.location.href = 'order-confirmation.html?orderId=' + order.id;
+            // Notify the user
+            alert(`${dishName} has been added to your cart!`);
+        });
     });
 
-    // Initialize cart
-    updateCart();
+    // Initialize the cart count on page load
+    updateCartCount();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cartItemsContainer = document.querySelector(".cart-items");
+    const cartEmptyMessage = document.querySelector(".cart-empty");
+    const itemsTotalElement = document.querySelector(".items-total");
+    const totalAmountElement = document.querySelector(".total-amount");
+    const taxesAmountElement = document.querySelector(".taxes-amount");
+    const checkoutButton = document.querySelector(".checkout-btn");
+
+    // Retrieve cart data from localStorage
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Function to render cart items
+    const renderCartItems = () => {
+        if (cart.length === 0) {
+            cartEmptyMessage.style.display = "block";
+            cartItemsContainer.innerHTML = ""; // Clear any existing items
+            itemsTotalElement.textContent = "₹0";
+            taxesAmountElement.textContent = "₹0";
+            totalAmountElement.textContent = "₹0";
+            checkoutButton.disabled = true;
+            return;
+        }
+
+        cartEmptyMessage.style.display = "none";
+        checkoutButton.disabled = false;
+
+        let itemsTotal = 0;
+        cartItemsContainer.innerHTML = ""; // Clear existing items
+
+        cart.forEach((item, index) => {
+            itemsTotal += item.price;
+
+            const cartItem = document.createElement("div");
+            cartItem.classList.add("cart-item");
+            cartItem.innerHTML = `
+                <div class="item-details">
+                    <span>${item.name}</span>
+                    <span>₹${item.price}</span>
+                </div>
+                <button class="remove-item" data-index="${index}">Remove</button>
+            `;
+            cartItemsContainer.appendChild(cartItem);
+        });
+
+        // Update billing details
+        const taxes = Math.round(itemsTotal * 0.05); // 5% GST
+        const deliveryFee = 40; // Fixed delivery fee
+        const platformFee = 10; // Fixed platform fee
+        const totalAmount = itemsTotal + taxes + deliveryFee + platformFee;
+
+        itemsTotalElement.textContent = `₹${itemsTotal}`;
+        taxesAmountElement.textContent = `₹${taxes}`;
+        totalAmountElement.textContent = `₹${totalAmount}`;
+    };
+
+    // Function to remove an item from the cart
+    cartItemsContainer.addEventListener("click", (event) => {
+        if (event.target.classList.contains("remove-item")) {
+            const index = event.target.getAttribute("data-index");
+            cart.splice(index, 1); // Remove the item from the cart array
+            localStorage.setItem("cart", JSON.stringify(cart)); // Update localStorage
+            renderCartItems(); // Re-render the cart items
+        }
+    });
+
+    // Render cart items on page load
+    renderCartItems();
 });

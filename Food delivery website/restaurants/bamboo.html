@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bamboo House - DishDelight</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html"><h1>Dish<span>Delight</span></h1></a>
+        </div>
+        <div class="nav-items">
+            <a href="../index.html">Home</a>
+            <a href="../restaurants.html" class="active">Restaurants</a>
+            <a href="../offers.html">Offers</a>
+            <a href="../cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a href="../login.html" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <div class="restaurant-header">
+        <div class="restaurant-banner">
+            <img src="../images/bamboo.jpg" alt="The Bamboo House">
+            <div class="restaurant-info-overlay">
+                <div class="restaurant-details">
+                    <h1>The Bamboo House</h1>
+                    <p class="cuisine">Veg and Non-Veg • South Indian • North Indian</p>
+                    <div class="restaurant-stats">
+                        <span class="rating"><i class="fas fa-star"></i> 4.4</span>
+                        <span class="time"><i class="fas fa-clock"></i> 20-30 min</span>
+                        <span class="price"><i class="fas fa-rupee-sign"></i> 180 for two</span>
+                        <span class="type"><i class="fas fa-utensils"></i> Veg and Non-Veg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-sidebar">
+            <div class="menu-categories">
+                <h3>Menu</h3>
+                <ul>
+                    <li class="active"><a href="#recommended">Recommended</a></li>
+                    <li><a href="#south-indian">South Indian</a></li>
+                    <li><a href="#north-indian">North Indian</a></li>
+                    <li><a href="#non-veg">Non-Veg Specials</a></li>
+                    <li><a href="#thali">Special Thali</a></li>
+                    <li><a href="#rice">Rice Items</a></li>
+                    <li><a href="#sweets">Sweets & Desserts</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-content">
+            <section id="recommended" class="menu-section">
+                <h2>Recommended</h2>
+                <div class="menu-items">
+                    <div class="menu-item" data-id="pbm1">
+                        <img src="../images/paneer-butter-masala.jpg" alt="Paneer Butter Masala">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Paneer Butter Masala</h3>
+                                <span class="veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Rich and creamy curry with soft paneer cubes</p>
+                            <div class="item-footer">
+                                <span class="price">₹180</span>
+                                <button class="add-to-cart" onclick="addToCart('pbm1', 'Paneer Butter Masala', 180, this)">
+                                    Add <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-id="cb1">
+                        <img src="../images/chicken-biryani.jpg" alt="Chicken Biryani">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Chicken Biryani</h3>
+                                <span class="non-veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Aromatic basmati rice cooked with tender chicken and spices</p>
+                            <div class="item-footer">
+                                <span class="price">₹250</span>
+                                <button class="add-to-cart" onclick="addToCart('cb1', 'Chicken Biryani', 250, this)">
+                                    Add <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-id="bc1">
+                        <img src="../images/butter-chicken.jpg" alt="Butter Chicken">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Butter Chicken</h3>
+                                <span class="non-veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Creamy tomato-based curry with tender chicken pieces</p>
+                            <div class="item-footer">
+                                <span class="price">₹280</span>
+                                <button class="add-to-cart" onclick="addToCart('bc1', 'Butter Chicken', 280, this)">
+                                    Add <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="south-indian" class="menu-section">
+                <h2>South Indian</h2>
+                <div class="menu-items">
+                    <div class="menu-item" data-id="is1">
+                        <img src="../images/idli-sambar.jpg" alt="Idli Sambar">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Idli Sambar</h3>
+                                <span class="veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Soft steamed rice cakes with sambar and chutney</p>
+                            <div class="item-footer">
+                                <span class="price">₹60</span>
+                                <button class="add-to-cart" onclick="addToCart('is1', 'Idli Sambar', 60, this)">
+                                    Add <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-id="ou1">
+                        <img src="../images/onion-uttapam.jpg" alt="Onion Uttapam">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Onion Uttapam</h3>
+                                <span class="veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Thick rice pancake topped with onions and vegetables</p>
+                            <div class="item-footer">
+                                <span class="price">₹80</span>
+                                <button class="add-to-cart" onclick="addToCart('ou1', 'Onion Uttapam', 80, this)">
+                                    Add <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="non-veg" class="menu-section">
+                <h2>Non-Veg Specials</h2>
+                <div class="menu-items">
+                    <div class="menu-item" data-id="cb2">
+                        <img src="../images/chicken-65.jpg" alt="Chicken 65">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Chicken 65</h3>
+                                <span class="non-veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Spicy and crispy fried chicken with South Indian flavors</p>
+                            <div class="item-footer">
+                                <span class="price">₹200</span>
+                                <button class="add-to-cart" onclick="addToCart('cb2', 'Chicken 65', 200, this)">
+                                    Add <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-id="fm1">
+                        <img src="../images/fish-masala.jpg" alt="Fish Masala">
+                        <div class="item-details">
+                            <div class="item-header">
+                                <h3>Fish Masala</h3>
+                                <span class="non-veg-icon"><i class="fas fa-circle"></i></span>
+                            </div>
+                            <p class="item-description">Delicious fish curry cooked with traditional spices</p>
+                            <div class="item-footer">
+                                <span class="price">₹300</span>
+                                <button class="add-to-cart" onclick="addToCart('fm1', 'Fish Masala', 300, this)">
+                                    Add <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dish<span>Delight</span></h3>
+                <p>Your favorite food delivery partner in Bailhongal</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Partner with us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DishDelight Bailhongal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../menu.js"></script>
+</body>
+</html>
